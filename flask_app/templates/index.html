@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Analysis Assistance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">    
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h2 class="title">Medical Analysis Assistant</h2>
+        <form action="/predict" method="post">
+            <label for="gender">Select Your Gender:</label>
+            <select name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="age">Enter Your Age:</label>
+            <input type="number" name="age" required>
+
+            <label for="polyuria">Do you experience frequent urination (Polyuria)?</label>
+            <select name="polyuria" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="polydipsia">Do you experience excessive thirst (Polydipsia)?</label>
+            <select name="polydipsia" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="weight_loss">Have you experienced sudden weight loss?</label>
+            <select name="weight_loss" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="weakness">Do you often feel weak?</label>
+            <select name="weakness" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+
+            <label for="appetite">Do you have an excessive appetite?</label>
+            <select name="appetite" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="obesity">Are you considered obese?</label>
+            <select name="obesity" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+

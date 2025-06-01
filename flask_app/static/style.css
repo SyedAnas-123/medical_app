@@ -1,0 +1,109 @@
+
+
+/* Dark Maroon to Black Vertical Gradient */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #4b0000, #121212); /* Smooth transition from Maroon to Black */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto; /* Allows vertical scrolling */
+}
+
+
+/* 3D Animated Background */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(38, 38, 38, 0.9) 0%, rgb(25, 24, 24) 100%);
+    z-index: -1;
+}
+
+/* Glowing Form Container */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); /* Slight red glow for effect */
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Smooth Title */
+.title {
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff5555;
+    text-shadow: 0 0 10px #ff5555;
+}
+
+/* Stylish Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select {
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Glowing Input Focus */
+input:focus, select:focus {
+    border-color: #ff5555;
+    box-shadow: 0 0 10px #ff5555;
+}
+
+/* Fix Dropdown Colors */
+select {
+    background-color: #300000; /* Dark maroon dropdown */
+    color: white;
+}
+
+select option {
+    background-color: #500000; /* Slightly brighter maroon */
+    color: white;
+}
+
+/* Animated Submit Button */
+input[type="submit"] {
+    background: linear-gradient(90deg, #ff5555, #cc0000);
+    border: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(90deg, #cc0000, #ff5555);
+    box-shadow: 0 0 15px #ff5555;
+}
+
+/* Smooth Appear Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
