@@ -2,8 +2,14 @@ from flask import Flask, request, render_template
 import pickle
 import numpy as np
 
+
+
 # Load the trained diabetes model
-model_path = 'model.pkl'
+import os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+model_path = os.path.join(basedir, 'model.pkl')
+
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
